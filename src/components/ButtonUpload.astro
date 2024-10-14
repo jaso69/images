@@ -1,0 +1,38 @@
+---
+import { CldUploadWidget } from 'astro-cloudinary';
+const { preset } = Astro.props;
+---
+<CldUploadWidget 
+uploadPreset={preset}
+options={{
+  sources: ['local'],
+  multiple: false,
+  maxFiles: 1,
+  language: 'es',
+  text:{
+    es:{
+      "or": "o explora",
+      menu: {
+        "files": "Archivos",
+      },
+      local:{
+        "dd_title_single": "Arrastra tu imagen aqui",
+        "browse": "Buscar",
+      }
+    }
+  },
+  styles: {
+     palette: {
+      window: "#1e2e4e",
+      menuIcons: "#fff",
+      sourceBg: "#1e2e4e",
+     }
+  }
+}}
+>
+  <button 
+  class="bg-blue-500 hover:bg-blue-700 text-white text-base font-bold py-2 px-2 rounded"
+  >
+  Subir Imagen
+</button>
+</CldUploadWidget>
