@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCldImageUrl } from 'astro-cloudinary/helpers';
+
+const { searchParams } = Astro.url;
+const id = searchParams.get('id');
+
+if (!id) { return Astro.redirect('/');}
+const url = getCldImageUrl({ src:id });
+---
+
+<Layout title="Photo">
+	<main class="flex flex-col items-center justify-center mt-6">
+		<img src={url} alt="Photo"/>
+	</main>
+</Layout>
+

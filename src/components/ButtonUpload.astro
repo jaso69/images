@@ -3,6 +3,7 @@ import { CldUploadWidget } from 'astro-cloudinary';
 const { preset } = Astro.props;
 ---
 <CldUploadWidget 
+id="upload_widget"
 uploadPreset={preset}
 options={{
   sources: ['local'],
@@ -31,8 +32,10 @@ options={{
 }}
 >
   <button 
-  class="bg-blue-500 hover:bg-blue-700 text-white text-base font-bold py-2 px-2 rounded"
+  class="bg-blue-500 hover:bg-blue-700 text-white text-base font-bold py-2 px-2 rounded mb-4"
   >
   Subir Imagen
 </button>
 </CldUploadWidget>
+
+<script lang="javascript" src="/public/js/uploadWidget.js" type="module" is:inline></script>
